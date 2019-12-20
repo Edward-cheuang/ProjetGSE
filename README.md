@@ -7,21 +7,28 @@ administreur-OptiPlex-9020 : le nom de votre PC
 
 
 Terminal 1 de la carte: Espace de swap et roscore ouvert.
+    
     $ sudo swapon swapfile
     $ free –h
     $ source catkin_ws/devel_isolated/setup.bash
     $ ssh odroid
     $ roscore
+    
 Terminal 2 de la carte: Connect Lidar
+
     $ sudo chmod 666 /dev/ttyUSB0
     $ source /home/odroid/catkin_ws/devel_isolated/setup.bash
     $ roslaunch rplidar_ros rplidar.launch
+    
 Terminal 3 de la carte: Connect caméra
+
     $ export ROS_HOSTNAME=odroid
     $ export ROS_MASTER_URI=http://odroid:11311
     $ rosrun usb_cam usb_cam_node
 ---------------------------------------------------------------------
+
 Terminal 1 du PC: Démarer cartographer et RVIZ
+
     $ cd catkin_ws
     $ ssh administreur-OptiPlex-9020
     $ export ROS_HOSTNAME=administreur-OptiPlex-9020
@@ -29,7 +36,9 @@ Terminal 1 du PC: Démarer cartographer et RVIZ
     $ export DISPLAY=':0.0'
     $ source catkin_ws/devel_isolated/setup.bash
     $ roslaunch cartographer_ros demo_revo_lds.launch
+    
 Terminal 2 du PC: Démarer darknet
+
     $ cd catkin_ws
     $ ssh administreur-OptiPlex-9020
     $ export ROS_HOSTNAME=administreur-OptiPlex-9020
@@ -38,6 +47,7 @@ Terminal 2 du PC: Démarer darknet
     $ source catkin_ws/devel_isolated/setup.bash
     $ roslaunch darknet_ros darknet_ros.launch
 Terminal 3 du PC: Enregistrer le fichier de cartographer -> .bag file
+
     $ ssh administreur-OptiPlex-9020
     $ export ROS_HOSTNAME=administreur-OptiPlex-9020
     $ export ROS_MASTER_URI=http://odroid:11311
