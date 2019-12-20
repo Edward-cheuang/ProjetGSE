@@ -3,6 +3,7 @@
 Après avoir installé le système Linux, le système ros, google cartographer, les packages ros du RPidar et de la caméra sur la carte et l'ordinateur, exécutez les commandes suivantes dans les terminaux:
 
 odroid : le nom de carte
+
 administreur-OptiPlex-9020 : le nom de votre PC
 
 
